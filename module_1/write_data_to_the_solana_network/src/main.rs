@@ -3,7 +3,7 @@ use solana_sdk::native_token::{sol_to_lamports, LAMPORTS_PER_SOL};
 use solana_sdk::signer::Signer;
 use solana_sdk::system_instruction::{self};
 use solana_sdk::transaction::Transaction;
-use solana_sdk::{native_token::lamports_to_sol, pubkey::Pubkey, signer::keypair::Keypair};
+use solana_sdk::{pubkey::Pubkey, signer::keypair::Keypair};
 use std::str::FromStr;
 use std::u8;
 
@@ -37,16 +37,7 @@ fn send_sol(client: RpcClient, amount: u64, to: Pubkey, from: Keypair) {
 fn main() -> web3::Result<()> {
     let url = "https://api.devnet.solana.com";
     let client = RpcClient::new(url);
-    let pubkey = Pubkey::from_str("CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN").unwrap();
 
-    /* Read data from the Solana network */
-    let lam = client.get_balance(&pubkey).unwrap();
-    println!("Balance: {}", lamports_to_sol(lam));
-
-    let account = client.get_account(&pubkey).unwrap();
-    println!("Is account executable? {}", account.executable);
-
-    /* Write data to the Solana network */
     let payer = initialize_key_pair();
 
     client

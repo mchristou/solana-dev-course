@@ -1,5 +1,5 @@
 [package]
-name = "module_1"
+name = "write_data_to_the_solana_network"
 version = "0.1.0"
 edition = "2021"
 
