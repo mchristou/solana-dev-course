@@ -3,7 +3,7 @@ use solana_sdk::{native_token::lamports_to_sol, pubkey::Pubkey};
 use std::str::FromStr;
 
 fn main() -> web3::Result<()> {
-    let url = "hteps://api.devnet.solana.com";
+    let url = "https://api.devnet.solana.com";
     let client = RpcClient::new(url);
     let pubkey = Pubkey::from_str("CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN").unwrap();
 
