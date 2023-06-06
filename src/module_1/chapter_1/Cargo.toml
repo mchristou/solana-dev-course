@@ -1,5 +1,5 @@
 [package]
-name = "write_data_to_the_solana_network"
+name = "chapter_1"
 version = "0.1.0"
 edition = "2021"
 
@@ -9,4 +9,3 @@ edition = "2021"
 solana-client = "1.14.18"
 solana-sdk = "1.14.18"
 web3 = "0.17.0"
-anyhow = "1.0.71"

@@ -1,5 +1,5 @@
 [package]
-name = "deserialize_custom_account_data"
+name = "chapter_2"
 version = "0.1.0"
 edition = "2021"
 
@@ -9,4 +9,4 @@ edition = "2021"
 solana-client = "1.14.18"
 solana-sdk = "1.14.18"
 web3 = "0.17.0"
-borsh = "0.10.3"
+anyhow = "1.0.71"
