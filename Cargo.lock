@@ -903,6 +903,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "create_tokens"
+version = "0.1.0"
+dependencies = [
+ "solana-client",
+ "solana-program",
+ "solana-sdk",
+ "spl-token",
+ "web3",
+]
+
+[[package]]
 name = "crossbeam-channel"
 version = "0.5.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"

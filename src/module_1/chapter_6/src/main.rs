@@ -1,7 +1,9 @@
 use borsh::{BorshDeserialize, BorshSerialize};
 use solana_account_decoder::UiDataSliceConfig;
 use solana_client::rpc_client::RpcClient;
-use solana_client::rpc_config::{RpcAccountInfoConfig, RpcProgramAccountsConfig};
+use solana_client::rpc_config::{
+    RpcAccountInfoConfig, RpcProgramAccountsConfig,
+};
 use solana_sdk::pubkey::Pubkey;
 use std::str::FromStr;
 use std::u8;
@@ -14,7 +16,9 @@ struct StudentIntro {
 }
 
 fn prefetch_accounts(client: &RpcClient) -> Vec<Pubkey> {
-    let program_id = Pubkey::from_str("HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf").unwrap();
+    let program_id =
+        Pubkey::from_str("HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf")
+            .unwrap();
 
     let config = RpcProgramAccountsConfig {
         filters: None,
@@ -30,14 +34,17 @@ fn prefetch_accounts(client: &RpcClient) -> Vec<Pubkey> {
         with_context: None,
     };
 
-    let accounts = client
-        .get_program_accounts_with_config(&program_id, config)
-        .unwrap();
+    let accounts =
+        client.get_program_accounts_with_config(&program_id, config).unwrap();
 
     accounts.iter().map(|a| a.0).collect()
 }
 
-fn fetch_page(client: &RpcClient, page: usize, per_page: usize) -> Vec<StudentIntro> {
+fn fetch_page(
+    client: &RpcClient,
+    page: usize,
+    per_page: usize,
+) -> Vec<StudentIntro> {
     let accounts = prefetch_accounts(client);
 
     let paginated_keys = &accounts[((page - 1) * per_page)..(page * per_page)];
@@ -46,7 +53,10 @@ fn fetch_page(client: &RpcClient, page: usize, per_page: usize) -> Vec<StudentIn
         .get_multiple_accounts(paginated_keys)
         .unwrap()
         .iter()
-        .map(|a| StudentIntro::deserialize(&mut a.clone().unwrap().data.as_slice()).unwrap())
+        .map(|a| {
+            StudentIntro::deserialize(&mut a.clone().unwrap().data.as_slice())
+                .unwrap()
+        })
         .collect::<Vec<_>>();
 
     students.sort_by_key(|s| s.name.to_lowercase());

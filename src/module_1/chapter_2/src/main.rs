@@ -10,7 +10,8 @@ use std::u8;
 fn initialize_key_pair() -> Keypair {
     let private_key_env = std::env::var("PRIVATE_KEY").unwrap();
 
-    let private_key: Vec<_> = private_key_env.split(',').flat_map(u8::from_str).collect();
+    let private_key: Vec<_> =
+        private_key_env.split(',').flat_map(u8::from_str).collect();
 
     Keypair::from_bytes(private_key.as_slice()).unwrap()
 }
@@ -40,9 +41,7 @@ fn main() -> web3::Result<()> {
 
     let payer = initialize_key_pair();
 
-    client
-        .request_airdrop(&payer.pubkey(), LAMPORTS_PER_SOL)
-        .unwrap();
+    client.request_airdrop(&payer.pubkey(), LAMPORTS_PER_SOL).unwrap();
     let lamports = sol_to_lamports(0.1);
     send_sol(client, lamports, Keypair::new().pubkey(), payer);
 

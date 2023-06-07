@@ -15,14 +15,17 @@ fn main() -> web3::Result<()> {
     let url = "https://api.devnet.solana.com";
     let client = RpcClient::new(url);
 
-    let program_id = Pubkey::from_str("HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf").unwrap();
+    let program_id =
+        Pubkey::from_str("HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf")
+            .unwrap();
 
     let _: Vec<_> = client
         .get_program_accounts(&program_id)
         .unwrap()
         .iter()
         .inspect(|(_pubkey, account)| {
-            let data = StudentIntro::deserialize(&mut account.data.as_slice()).unwrap();
+            let data = StudentIntro::deserialize(&mut account.data.as_slice())
+                .unwrap();
             println!("Name: {} - Message: {}", data.name, data.message);
         })
         .collect();

@@ -11,7 +11,8 @@ use std::u8;
 fn initialize_key_pair() -> Keypair {
     let private_key_env = std::env::var("PRIVATE_KEY").unwrap();
 
-    let private_key: Vec<_> = private_key_env.split(',').flat_map(u8::from_str).collect();
+    let private_key: Vec<_> =
+        private_key_env.split(',').flat_map(u8::from_str).collect();
 
     Keypair::from_bytes(private_key.as_slice()).unwrap()
 }
@@ -28,8 +29,12 @@ fn main() -> web3::Result<()> {
     let client = RpcClient::new(url);
     let keypair = initialize_key_pair();
 
-    let program_id = Pubkey::from_str("HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf").unwrap();
-    let pda = Pubkey::find_program_address(&[keypair.pubkey().as_ref()], &program_id).0;
+    let program_id =
+        Pubkey::from_str("HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf")
+            .unwrap();
+    let pda =
+        Pubkey::find_program_address(&[keypair.pubkey().as_ref()], &program_id)
+            .0;
 
     let student_intro_instruction = StudentIntro {
         variant: 0,

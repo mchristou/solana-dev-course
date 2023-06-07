@@ -1,2 +1,2 @@
 [workspace]
-members = ["src/module_1/*"]
+members = ["src/module_1/*", "src/module_2/*"]
