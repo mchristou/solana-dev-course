@@ -1,8 +1,9 @@
 use solana_client::rpc_client::RpcClient;
 use solana_program::program_pack::Pack;
-use solana_sdk::signer::keypair::Keypair;
-use solana_sdk::signer::Signer;
-use solana_sdk::transaction::Transaction;
+use solana_sdk::{
+    signer::{keypair::Keypair, Signer},
+    transaction::Transaction,
+};
 use spl_token::{
     instruction,
     state::{Account, Mint},

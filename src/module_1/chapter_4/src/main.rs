@@ -1,10 +1,13 @@
 use borsh::{BorshDeserialize, BorshSerialize};
 use solana_client::rpc_client::RpcClient;
-use solana_sdk::instruction::{AccountMeta, Instruction};
-use solana_sdk::signer::Signer;
-use solana_sdk::system_program;
-use solana_sdk::transaction::Transaction;
-use solana_sdk::{pubkey::Pubkey, signer::keypair::Keypair};
+use solana_sdk::{
+    instruction::{AccountMeta, Instruction},
+    pubkey::Pubkey,
+    signer::keypair::Keypair,
+    signer::Signer,
+    system_program,
+    transaction::Transaction,
+};
 use std::str::FromStr;
 use std::u8;
 

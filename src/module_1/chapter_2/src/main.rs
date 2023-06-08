@@ -1,9 +1,12 @@
 use solana_client::rpc_client::RpcClient;
-use solana_sdk::native_token::{sol_to_lamports, LAMPORTS_PER_SOL};
-use solana_sdk::signer::Signer;
-use solana_sdk::system_instruction::{self};
-use solana_sdk::transaction::Transaction;
-use solana_sdk::{pubkey::Pubkey, signer::keypair::Keypair};
+use solana_sdk::{
+    native_token::{sol_to_lamports, LAMPORTS_PER_SOL},
+    pubkey::Pubkey,
+    signer::keypair::Keypair,
+    signer::Signer,
+    system_instruction,
+    transaction::Transaction,
+};
 use std::str::FromStr;
 use std::u8;
 
