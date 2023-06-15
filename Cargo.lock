@@ -681,56 +681,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
-name = "chapter_1"
-version = "0.1.0"
-dependencies = [
- "solana-client",
- "solana-sdk",
- "web3",
-]
-
-[[package]]
-name = "chapter_2"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "solana-client",
- "solana-sdk",
- "web3",
-]
-
-[[package]]
-name = "chapter_4"
-version = "0.1.0"
-dependencies = [
- "borsh 0.10.3",
- "solana-client",
- "solana-sdk",
- "web3",
-]
-
-[[package]]
-name = "chapter_5"
-version = "0.1.0"
-dependencies = [
- "borsh 0.10.3",
- "solana-client",
- "solana-sdk",
- "web3",
-]
-
-[[package]]
-name = "chapter_6"
-version = "0.1.0"
-dependencies = [
- "borsh 0.10.3",
- "solana-account-decoder",
- "solana-client",
- "solana-sdk",
- "web3",
-]
-
-[[package]]
 name = "chrono"
 version = "0.4.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1097,6 +1047,16 @@ dependencies = [
  "quote 1.0.28",
  "rustc_version",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "deserialize_data"
+version = "0.1.0"
+dependencies = [
+ "borsh 0.10.3",
+ "solana-client",
+ "solana-sdk",
+ "web3",
 ]
 
 [[package]]
@@ -2447,6 +2407,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ceedf44fb00f2d1984b0bc98102627ce622e083e49a5bacdb3e514fa4238e267"
 
 [[package]]
+name = "page_order_filter_data"
+version = "0.1.0"
+dependencies = [
+ "borsh 0.10.3",
+ "solana-account-decoder",
+ "solana-client",
+ "solana-sdk",
+ "web3",
+]
+
+[[package]]
 name = "parity-scale-codec"
 version = "2.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2895,6 +2866,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "read_data"
+version = "0.1.0"
+dependencies = [
+ "solana-client",
+ "solana-sdk",
+ "web3",
+]
+
+[[package]]
 name = "redox_syscall"
 version = "0.2.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3278,6 +3258,16 @@ dependencies = [
  "proc-macro2 1.0.59",
  "quote 1.0.28",
  "syn 2.0.18",
+]
+
+[[package]]
+name = "serialize_data"
+version = "0.1.0"
+dependencies = [
+ "borsh 0.10.3",
+ "solana-client",
+ "solana-sdk",
+ "web3",
 ]
 
 [[package]]
@@ -5177,6 +5167,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "80d0f4e272c85def139476380b12f9ac60926689dd2e01d4923222f40580869d"
 dependencies = [
  "winapi",
+]
+
+[[package]]
+name = "write_data"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "solana-client",
+ "solana-sdk",
+ "web3",
 ]
 
 [[package]]
