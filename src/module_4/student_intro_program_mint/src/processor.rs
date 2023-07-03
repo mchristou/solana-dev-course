@@ -126,8 +126,8 @@ pub fn add_student_intro(
     let account_info_iter = &mut accounts.iter();
 
     let initializer = next_account_info(account_info_iter)?;
-    let pda_account = next_account_info(account_info_iter)?;
-    let pda_counter = next_account_info(account_info_iter)?;
+    let _pda_account = next_account_info(account_info_iter)?;
+    let _pda_counter = next_account_info(account_info_iter)?;
     let token_mint = next_account_info(account_info_iter)?;
     let mint_auth = next_account_info(account_info_iter)?;
     let user_ata = next_account_info(account_info_iter)?;
